@@ -3,29 +3,25 @@ package Lesson02;
 public class SecondClass {
     public static void main(String[] args) {
 
-        System.out.println("#1:  10<=Summa<=20 is: "+checkNumberZone(-10,21));
+        System.out.println("#1:  10<=Summa<=20 is: "+checkNumberZone(12, -1));
 
         System.out.print("\n");
         printPositivOrNegativNumber(0);
 
         System.out.print("\n");
-        System.out.println("#3:  "+ checkPositiveNegativeReverse(-10));
+        System.out.println("#3:  "+ checkPositiveNegativeReverse(-1));
 
         System.out.print("\n");
         printStringFewTimes("testPrint",2);
 
         System.out.print("\n");
-        int year=1500;
+        int year=1900;
         System.out.println("#5:  God "+year+" visokosnii - "+checkLeapYear(year));
 
     }
 
     public static boolean checkNumberZone(int value1, int value2) {             //первое задание
-         if ( (value1+value2)>=10 && (value1+value2)<=20){
-            return true;
-        }
-        else
-            return false;
+        return ((value1 + value2) >= 10 && (value1 + value2) <= 20);
     }
 
     public static void printPositivOrNegativNumber(int value){                    //второе задание
@@ -37,10 +33,7 @@ public class SecondClass {
     }
 
     public static boolean checkPositiveNegativeReverse(int value) {                 //третье задание
-        if (value < 0) {
-            return true;
-        } else
-            return false;
+        return (value < 0);
     }
 
     public static void printStringFewTimes(String stringForPrint, int howTimes){    //четвертое задание
@@ -59,12 +52,7 @@ public class SecondClass {
         boolean div100 = (year % 100 == 0);
         boolean div400 = (year % 400 == 0);
 
-
-        if (div4 && !div100 || div400){
-            return true;
-        }
-        else
-            return false;
+        return (div4 && !div100 || div400);
     }
 
 }
