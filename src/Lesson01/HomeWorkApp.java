@@ -40,7 +40,7 @@ public class HomeWorkApp {
             System.out.println("Red");
             //System.out.println("Красный");
         }
-        else if (value > 0 & value <= 100) {
+        else if (value > 0 && value <= 100) {
             System.out.println("Yellow");
             //System.out.println("Желтый");
         }
@@ -60,4 +60,5 @@ public class HomeWorkApp {
     else
         System.out.println("a < b");
     }
+// for new branch
 }
