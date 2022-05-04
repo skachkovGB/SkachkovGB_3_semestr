@@ -1,5 +1,10 @@
 package Lesson02;
 
+/**
+ * Skachkov
+ * Geek Brains 3.1 - Java
+ * Lesson 2
+ */
 public class SecondClass {
     public static void main(String[] args) {
 
