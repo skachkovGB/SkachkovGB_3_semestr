@@ -8,6 +8,12 @@ package Lesson04;
  * Lesson 4
  */
 
+//        0) Проанализировать код и попробовать написать с нуля.
+//        1) добавить монетки на карту с дальнейшим сбором;
+//        2) Скрыть всех врагов, не нарушая логики битвы игрока с врагом
+//        3*) Организовать показ (лог) битвы в консоль
+//        4*) Организовать переход на новый уровень
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -32,24 +38,40 @@ public class FourthClass {
     public static int enemyHealth;
     public static int enemyPower;
     public static int enemiesCount;
-    public static int enemyValueMin = 20;
-    public static int enemyValueMax = 50;
+    public static int enemyValueMin = 5;
+    public static int enemyValueMax = 10;
 
     public static int mapWidth;
     public static int mapHeight;
     public static int mapSizeMin = 2;
-    public static int mapSizeMax = 5;
+    public static int mapSizeMax = 3;
     public static char[][] map;
     public static char emptyCell = '_';
 
     public static char coinCell = 'o';
+    public static int coinCount=0;
+
 
     public static void main(String[] args) {
+
+        while (isPlayerAlive()){
+            System.out.println("========= NEW LVL=========");
+            newLVL();
+            mapSizeMin++;
+            mapSizeMax++;
+
+        }
+
+        System.out.println("Game over!");
+    }
+
+    public static void newLVL() {
         createMap();
 
         spawnPlayer();
         spawnEnemies();
-        map[1][1] = coinCell;
+        spawnCoins();
+        //map[1][1] = coinCell;
 
         while (true) {
             showMap();
@@ -65,9 +87,12 @@ public class FourthClass {
                 break;
             }
         }
+        System.out.println("=========================");
+        System.out.println("NOT ALL COINS TAKE!");
         showMap();
-        System.out.println("Game over!");
+        System.out.println("LEVEL END! gc!");
     }
+
 
     public static void createMap() {
         mapWidth = randomValue(mapSizeMin, mapSizeMax);
@@ -116,6 +141,25 @@ public class FourthClass {
                 enemyPosY = random.nextInt(mapHeight);
             } while (!isCellClear(enemyPosX, enemyPosY));
             map[enemyPosY][enemyPosX] = enemy;
+        }
+        System.out.println(("Enemy count: " + enemiesCount + ". HP=" + enemyHealth + ", PWR=" + enemyPower));
+    }
+
+    public static void spawnCoins() {
+
+        //coinCount = mapWidth * mapHeight / 2;
+        coinCount = mapSizeMax * mapSizeMin - enemiesCount -1;
+
+        int coinPosX;
+        int coinPosY;
+
+        for (int i = 1; i <= coinCount; i++) {
+
+            do {
+                coinPosX = random.nextInt(mapWidth);
+                coinPosY = random.nextInt(mapHeight);
+            } while (!isCellClear(coinPosX, coinPosY));
+            map[coinPosY][coinPosX] = coinCell;
         }
         System.out.println(("Enemy count: " + enemiesCount + ". HP=" + enemyHealth + ", PWR=" + enemyPower));
     }
