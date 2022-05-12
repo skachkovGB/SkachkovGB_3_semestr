@@ -14,7 +14,6 @@ public class Cats extends Animals {
     public Cats(String nickNameAnimal, String breedAnimal, int ageAnimal){
         super(nickNameAnimal, breedAnimal, ageAnimal);
         this.numberOfLives = 9;
-        this.numbersAllAnimals++;
     }
 
     public Cats(String nickNameAnimal){

@@ -15,15 +15,12 @@ public class Dogs extends Animals {
     public Dogs(String nickNameAnimal, String breedAnimal, int ageAnimal){
         super(nickNameAnimal, breedAnimal, ageAnimal);
         this.numberOfLives = 1;
-        this.numbersAllAnimals++;
 
     }
 
     public Dogs(String nickNameAnimal){
         super(nickNameAnimal);
         this.numberOfLives = 1;
-        this.numbersAllAnimals++;
-
     }
 
     @Override

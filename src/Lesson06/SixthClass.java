@@ -56,7 +56,7 @@ public class SixthClass {
         reks.run(10);
 
         Cats Mashka = new Cats("Mashka");
-        System.out.println("Kol:vo :"+ reks.getNumbersAllAnimals());
+        System.out.println("Kol:vo :"+ Mashka.getNumbersAllAnimals());
 
     }
 

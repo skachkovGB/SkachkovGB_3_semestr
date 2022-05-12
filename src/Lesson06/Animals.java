@@ -13,23 +13,32 @@ public class Animals {
     protected String breed;
     protected int age;
     protected int numberOfLives;
-    protected int numbersAllAnimals = 0;
+    protected static int numbersAllAnimals = 0;
 
     public Animals(String nickNameAnimal, String breedAnimal, int ageAnimal){
         this.nickName = nickNameAnimal;
         this.breed = breedAnimal;
         this.age = ageAnimal;
         this.numberOfLives=1;
-        this.numbersAllAnimals++;
-    }
-
-    public int getNumbersAllAnimals() {
-        return numbersAllAnimals;
+        numberOfLives++;
+        kolvoAllAnimals(this);
     }
 
     public Animals(String nickNameAnimal){
         this.nickName = nickNameAnimal;
+        kolvoAllAnimals(this);
     }
+
+    public static void kolvoAllAnimals(Animals animal){
+        animal.numbersAllAnimals++;
+    }
+
+    public int getNumbersAllAnimals() {
+        return numbersAllAnimals;
+
+    }
+
+
 
     public void speak(){
         if(numberOfLives<1) {
