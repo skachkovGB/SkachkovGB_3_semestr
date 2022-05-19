@@ -20,36 +20,21 @@ public class Animals {
         this.breed = breedAnimal;
         this.age = ageAnimal;
         this.numberOfLives=1;
-        numberOfLives++;
-        kolvoAllAnimals(this);
+        ++numbersAllAnimals;
     }
 
     public Animals(String nickNameAnimal){
         this.nickName = nickNameAnimal;
-        kolvoAllAnimals(this);
+        ++numbersAllAnimals;
     }
-
-    public static void kolvoAllAnimals(Animals animal){
-        animal.numbersAllAnimals++;
-    }
-
-    public int getNumbersAllAnimals() {
-        return numbersAllAnimals;
-
-    }
-
-
 
     public void speak(){
         if(numberOfLives<1) {
             this.finalize();
-        } //else if (this instanceof Cats || this instanceof Dogs){
-            //}
-        else {
+        } else {
             System.out.println(nickName + " making animals sounds ");
         }
     }
-
     public void speak(String say){
         if(numberOfLives<1) {
             this.finalize();
@@ -58,7 +43,6 @@ public class Animals {
             System.out.println(nickName + " sound: " + say);
         }
     }
-//    public abstract void speak();
 
     public void run(int length){
         if(numberOfLives<1) {

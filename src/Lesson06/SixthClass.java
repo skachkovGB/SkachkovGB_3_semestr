@@ -21,7 +21,7 @@ public class SixthClass {
 
         System.out.println("================================");
         Animals horse = new Animals("Plotva", "Koni v iablokax", 10);
-        System.out.println("Kol:vo :"+ horse.getNumbersAllAnimals());
+        System.out.println("Kol:vo :"+ Animals.numbersAllAnimals);
         horse.swim(30);
         horse.run(1000);
         for (int i = 0; i < 7; i++) {
@@ -32,7 +32,7 @@ public class SixthClass {
         System.out.println("================================");
 
         Cats barsik = new Cats("Barsik", "outbred", 1);
-        System.out.println("Kol:vo :"+ barsik.getNumbersAllAnimals());
+        System.out.println("Kol:vo :"+ Animals.numbersAllAnimals);
         barsik.speak();
         for (int i = -1; i < 10; i++) {
             barsik.swim(i);
@@ -43,7 +43,7 @@ public class SixthClass {
         System.out.println("================================");
 
         Dogs reks = new Dogs("Reks", "sheepdog", 3);
-        System.out.println("Kol:vo :"+ reks.getNumbersAllAnimals());
+        System.out.println("Kol:vo :"+ Animals.numbersAllAnimals);
         reks.speak();
         printLives(reks);
         reks.run(600);
@@ -56,7 +56,7 @@ public class SixthClass {
         reks.run(10);
 
         Cats Mashka = new Cats("Mashka");
-        System.out.println("Kol:vo :"+ Mashka.getNumbersAllAnimals());
+        System.out.println("Kol:vo :"+ Animals.numbersAllAnimals);
 
     }
 

@@ -10,6 +10,8 @@ package Lesson06;
 public class Cats extends Animals {
 
     private final String soundSpeak = "maaaaay";
+    private final int lengthRun = 200;
+
 
     public Cats(String nickNameAnimal, String breedAnimal, int ageAnimal){
         super(nickNameAnimal, breedAnimal, ageAnimal);
@@ -29,21 +31,14 @@ public class Cats extends Animals {
 //            System.out.println(nickName + " " + soundSpeak);
 //        }
         super.speak(this.soundSpeak);
-        /* единственная мысль пришла как сделать, весь код так не переделал, потому что не уверен что именно так надо.
-        Не хватило времени все переписать без копипасты, сердце обливается так сдавать, но хочу сдать до оглашения правильных ответов
-         */
     }
 
-        /* Я не понимаю как правильно сделать У меня условие если у животного жизней меньше 1 то оно не может издать звук,
-        если больше отрабатывает другая часть условия со стандартным звуком для класса Animals.
-        То же условие у меня есть и для классов Cats и Dogs, но звук там другой, поэтому в чистом виде использровать super.метод() я не могу
-        я не понимаю как уменьшить копипасту с if и вызывать метод из родительского класса. Здесь ошибка в логике построеня кода?*/
 
     @Override
     public void run(int length){
-        if(length<=200){
+        if(length<=lengthRun){
             System.out.println(nickName +" run " + length);
-        } else if (length>200) {
+        } else if (length>lengthRun) {
             System.out.println(nickName +" run " + length);
         } else {
             System.out.println("WRONG");
